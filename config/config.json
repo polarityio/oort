@@ -1,4 +1,5 @@
 {
+  "polarityIntegrationUuid": "c0aaf910-3baf-11ee-8c23-db698d26ad05",
   "name": "OORT",
   "acronym": "OORT",
   "description": "Find identities in OORT by IP Addresses and Emails",
