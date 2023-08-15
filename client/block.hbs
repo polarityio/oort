@@ -1,0 +1,149 @@
+{{#each details.endUserStateResults as |endUserStateResult index|}}
+  <div class="result">
+    {{#if (get expandableTitleStates index)}}
+      <a
+        href="#"
+        class="expandable-title"
+        {{on "click" (action "toggleExpandableTitle" index)}}
+      >
+        <span class="text">{{endUserStateResult.displayName}}</span>
+        {{fa-icon "angle-up"}}
+      </a>
+      <div class="details">
+        {{#if endUserStateResult.referenceUrl}}
+          <div class="p-link">
+            <a href={{endUserStateResult.referenceUrl}}>
+              View in OORT
+              {{fa-icon icon="external-link-square" class="external-link-icon"}}
+            </a>
+          </div>
+        {{/if}}
+        {{#if endUserStateResult.login}}
+          <div>
+            <span class="p-key">Login:</span>
+            <span class="p-value">{{endUserStateResult.login}}</span>
+          </div>
+        {{/if}}
+        {{#if endUserStateResult.employeeId}}
+          <div>
+            <span class="p-key">Employee ID:</span>
+            <span class="p-value">{{endUserStateResult.employeeId}}</span>
+          </div>
+        {{/if}}
+        {{#if endUserStateResult.managerLogin}}
+          <div>
+            <span class="p-key">Manager Login:</span>
+            <span class="p-value">{{endUserStateResult.managerLogin}}</span>
+          </div>
+        {{/if}}
+        {{#if endUserStateResult.status}}
+          <div>
+            <span class="p-key">Status:</span>
+            <span class="p-value">{{endUserStateResult.status}}</span>
+          </div>
+        {{/if}}
+        {{#if endUserStateResult.phoneNumber}}
+          <div>
+            <span class="p-key">Phone Number:</span>
+            <span class="p-value">{{endUserStateResult.phoneNumber}}</span>
+          </div>
+        {{/if}}
+        {{#if endUserStateResult.userTypeClassification}}
+          <div>
+            <span class="p-key">User Type Classification:</span>
+            <span class="p-value">{{endUserStateResult.userTypeClassification}}</span>
+          </div>
+        {{/if}}
+        {{#if endUserStateResult.lastSignInLocation.city}}
+          <div>
+            <span class="p-key">Last SignIn City:</span>
+            <span class="p-value">{{endUserStateResult.lastSignInLocation.city}}</span>
+          </div>
+        {{/if}}
+        {{#if endUserStateResult.lastSignInLocation.state}}
+          <div>
+            <span class="p-key">Last SignIn State:</span>
+            <span class="p-value">{{endUserStateResult.lastSignInLocation.state}}</span>
+          </div>
+        {{/if}}
+        {{#if endUserStateResult.lastSignInLocation.country}}
+          <div>
+            <span class="p-key">Last SignIn Country:</span>
+            <span class="p-value">{{endUserStateResult.lastSignInLocation.country}}</span>
+          </div>
+        {{/if}}
+
+        {{#if endUserStateResult.usedApplications.length}}
+          <div>
+            <span class="p-key">Used Applications:</span>
+            <span class="p-value">{{join ", " endUserStateResult.usedApplications}}</span>
+          </div>
+        {{/if}}
+        {{#if endUserStateResult.unusedApplications.length}}
+          <div>
+            <span class="p-key">Unused Applications:</span>
+            <span class="p-value">{{join
+                ", "
+                endUserStateResult.unusedApplications
+              }}</span>
+          </div>
+        {{/if}}
+        {{#if endUserStateResult.usedFactors.length}}
+          <div>
+            <span class="p-key">Used Factors:</span>
+            <span class="p-value">{{join ", " endUserStateResult.usedFactors}}</span>
+          </div>
+        {{/if}}
+
+        {{#if endUserStateResult.ipAddresses.length}}
+          <h1 class="p-title">{{fa-icon icon="location-arrow"}} IP Addresses</h1>
+          {{#each endUserStateResult.ipAddresses as |ipAddress|}}
+            <div class="mb-2">
+              <div>
+                <span class="p-key">IP:</span>
+                <span class="p-value">{{ipAddress.ipAddress}}</span>
+              </div>
+              {{#if ipAddress.location}}
+                {{#if ipAddress.location.city}}
+                  <div>
+                    <span class="p-key">City:</span>
+                    <span class="p-value">{{ipAddress.location.city}}</span>
+                  </div>
+                {{/if}}
+                {{#if ipAddress.location.state}}
+                  <div>
+                    <span class="p-key">State:</span>
+                    <span class="p-value">{{ipAddress.location.state}}</span>
+                  </div>
+                {{/if}}
+                {{#if ipAddress.location.country}}
+                  <div>
+                    <span class="p-key">Country:</span>
+                    <span class="p-value">{{ipAddress.location.country}}</span>
+                  </div>
+                {{/if}}
+              {{/if}}
+            </div>
+          {{/each}}
+        {{/if}}
+      </div>
+    {{else}}
+      <a
+        href="#"
+        class="expandable-title"
+        {{on "click" (action "toggleExpandableTitle" index)}}
+      >
+        <span class="text">{{endUserStateResult.displayName}}</span>
+        {{fa-icon "angle-down"}}
+      </a>
+      {{#if endUserStateResult.referenceUrl}}
+        <div class="p-link">
+          <a href={{endUserStateResult.referenceUrl}}>
+            View in OORT
+            {{fa-icon icon="external-link-square" class="external-link-icon"}}
+          </a>
+        </div>
+      {{/if}}
+    {{/if}}
+  </div>
+{{/each}}

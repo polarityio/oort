@@ -1,0 +1,43 @@
+{
+  "name": "OORT",
+  "acronym": "OORT",
+  "description": "Find identities in OORT by IP Addresses and Emails",
+  "entityTypes": ["IPv4", "email"],
+  "defaultColor": "light-blue",
+  "styles": ["./client/styles.less"],
+  "block": {
+    "component": { "file": "./client/block.js" },
+    "template": { "file": "./client/block.hbs" }
+  },
+  "request": { "cert": "", "key": "", "passphrase": "", "ca": "", "proxy": "" },
+  "logging": { "level": "info" },
+  "options": [
+    {
+      "key": "clientId",
+      "name": "Client ID",
+      "description": "The Client ID found on you OORT Polarity Integration",
+      "default": "",
+      "type": "text",
+      "userCanEdit": false,
+      "adminOnly": true
+    },
+    {
+      "key": "clientSecret",
+      "name": "Client Secret",
+      "description": "The Client Secret found on you OORT Polarity Integration",
+      "default": "",
+      "type": "password",
+      "userCanEdit": false,
+      "adminOnly": true
+    },
+    {
+      "key": "audience",
+      "name": "Audience",
+      "description": "The Audience found on you OORT Polarity Integration",
+      "default": "",
+      "type": "text",
+      "userCanEdit": false,
+      "adminOnly": true
+    }
+  ]
+}
