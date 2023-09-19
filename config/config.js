@@ -50,20 +50,6 @@ module.exports = {
       type: 'text',
       userCanEdit: false,
       adminOnly: true
-    },
-    {
-      key: 'environment',
-      name: 'Environment',
-      description:
-        'Select the enviorment you would like to connect to, either staging or production.  This option defaults to pointing at production.',
-      default: 'production',
-      type: 'select',
-      options: [
-        { value: 'production', display: 'Production' },
-        { value: 'staging', display: 'Staging' }
-      ],
-      userCanEdit: false,
-      adminOnly: true
     }
   ]
 };

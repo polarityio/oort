@@ -7,15 +7,12 @@ const authenticateRequest =
   async ({ query, options, ...requestOptions }) => {
     const cacheId = options.clientId + options.clientSecret + options.audience;
     let accessToken = tokenCache.get(cacheId);
-
-    const { tokenUrl } = selectedEnvironment(options);
-
     if (!accessToken) {
       const { access_token, expires_in } = get(
         'body',
         await requestWithDefaults({
           method: 'POST',
-          url: tokenUrl,
+          url: 'https://login.stage.oort.io/oauth/token',
           headers: {
             'Content-Type': 'application/json'
           },
@@ -31,30 +28,15 @@ const authenticateRequest =
       accessToken = access_token;
     }
 
-    const { apiUrl } = selectedEnvironment(options);
     return {
       ...requestOptions,
       method: 'POST',
-      url: apiUrl,
+      url: 'https://dashboard-api.stage.oort.io/api',
       headers: {
         Authorization: `Bearer ${accessToken}`
       },
       body: { query }
     };
   };
-
-function selectedEnvironment(options) {
-  if (options.environment === 'staging') {
-    return {
-      tokenUrl: 'https://login.stage.oort.io/oauth/token',
-      apiUrl: 'https://dashboard-api.stage.oort.io/api'
-    };
-  } else {
-    return {
-      tokenUrl: 'https://login.oort.io/oauth/token',
-      apiUrl: 'https://dashboard-api.oort.io/api'
-    };
-  }
-}
 
 module.exports = authenticateRequest;

@@ -39,20 +39,6 @@
       "type": "text",
       "userCanEdit": false,
       "adminOnly": true
-    },
-    {
-      "key": "environment",
-      "name": "Environment",
-      "description": "Select the environment you would like to connect to, either staging or production. This option defaults to pointing at production.",
-      "default": "prouction",
-      "type": "select",
-      "options": [
-        { "value": "production", "display": "Production" },
-        { "value": "staging", "display": "Staging" }
-      ],
-      "multiple": false,
-      "userCanEdit": false,
-      "adminOnly": true
     }
   ]
 }
