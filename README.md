@@ -28,9 +28,13 @@ The Client Secret found on you OORT Polarity Integration
 
 The Audience found on you OORT Polarity Integration
 
-### Enviornment
+### Token URL
 
-Select which enviornemnt the integration will make API calls too. This option defaults to the production enviorment.
+Enter the URL for your OORT token instance. This option defaults to pointing at the OORT production environment.
+
+### API URL
+
+Enter the API URL for your OORT instance. This option defaults to pointing at the OORT production environment."
 
 ## Installation Instructions
 
