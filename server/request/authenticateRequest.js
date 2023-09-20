@@ -13,7 +13,7 @@ const authenticateRequest =
         'body',
         await requestWithDefaults({
           method: 'POST',
-          url: options.tokenUrl,
+          url: options.tokenUrl.trim(),
           headers: {
             'Content-Type': 'application/json'
           },
@@ -32,7 +32,7 @@ const authenticateRequest =
     return {
       ...requestOptions,
       method: 'POST',
-      url: options.apiUrl,
+      url: options.apiUrl.trim(),
       headers: {
         Authorization: `Bearer ${accessToken}`
       },
