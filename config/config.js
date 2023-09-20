@@ -52,16 +52,22 @@ module.exports = {
       adminOnly: true
     },
     {
-      key: 'environment',
-      name: 'Environment',
+      key: 'tokenUrl',
+      name: 'Token URL',
       description:
-        'Select the enviorment you would like to connect to, either staging or production.  This option defaults to pointing at production.',
-      default: 'production',
-      type: 'select',
-      options: [
-        { value: 'production', display: 'Production' },
-        { value: 'staging', display: 'Staging' }
-      ],
+        'Select the environment you would like to connect to, either staging or production. This option defaults to pointing at production.',
+      default: 'prouction',
+      type: 'text',
+      userCanEdit: false,
+      adminOnly: true
+    },
+    {
+      key: 'apiUrl',
+      name: 'Token URL',
+      description:
+        'Select the environment you would like to connect to, either staging or production. This option defaults to pointing at production.',
+      default: 'prouction',
+      type: 'text',
       userCanEdit: false,
       adminOnly: true
     }
