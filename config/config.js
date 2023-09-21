@@ -55,18 +55,18 @@ module.exports = {
       key: 'tokenUrl',
       name: 'Token URL',
       description:
-        'Select the environment you would like to connect to, either staging or production. This option defaults to pointing at production.',
-      default: 'prouction',
+        'Enter the URL for your OORT  token instance. This option defaults to pointing at the OORT production environment. Include the schema (https://)',
+      default: 'https://login.oort.io/oauth/token',
       type: 'text',
       userCanEdit: false,
       adminOnly: true
     },
     {
       key: 'apiUrl',
-      name: 'Token URL',
+      name: 'API URL',
       description:
-        'Select the environment you would like to connect to, either staging or production. This option defaults to pointing at production.',
-      default: 'prouction',
+        'Enter the API URL for your OORT instance. This option defaults to pointing at the OORT production environment. Include the schema (https://)',
+      default: 'https://dashboard-api.oort.io/api',
       type: 'text',
       userCanEdit: false,
       adminOnly: true

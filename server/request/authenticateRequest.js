@@ -7,7 +7,6 @@ const authenticateRequest =
   async ({ query, options, ...requestOptions }) => {
     const cacheId = options.clientId + options.clientSecret + options.audience;
     let accessToken = tokenCache.get(cacheId);
-
     if (!accessToken) {
       const { access_token, expires_in } = get(
         'body',

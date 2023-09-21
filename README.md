@@ -35,6 +35,15 @@ Enter the URL for your OORT token instance. This option defaults to pointing at 
 ### API URL
 
 Enter the API URL for your OORT instance. This option defaults to pointing at the OORT production environment."
+The Client ID found on you OORT Polarity Integration
+
+### Client Secret
+
+The Client Secret found on you OORT Polarity Integration
+
+### Audience
+
+The Audience found on you OORT Polarity Integration
 
 ## Installation Instructions
 
