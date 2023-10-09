@@ -1,6 +1,6 @@
 {
   "name": "oort",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "main": "./integration.js",
   "private": true,
   "license": "MIT",
@@ -10,6 +10,6 @@
     "bottleneck": "^2.19.5",
     "lodash": "^4.17.21",
     "node-cache": "^5.1.2",
-    "postman-request": "^2.88.1-postman.31"
+    "postman-request": "^2.88.1-postman.33"
   }
 }
