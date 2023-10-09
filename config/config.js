@@ -55,7 +55,7 @@ module.exports = {
       key: 'tokenUrl',
       name: 'Token URL',
       description:
-        'Enter the URL for your OORT  token instance. This option defaults to pointing at the OORT production environment. Include the schema (https://)',
+        'Enter the Token URL for your OORT instance. This option defaults to pointing at the OORT production environment. Include the scheme (https://)',
       default: 'https://login.oort.io/oauth/token',
       type: 'text',
       userCanEdit: false,
@@ -65,7 +65,7 @@ module.exports = {
       key: 'apiUrl',
       name: 'API URL',
       description:
-        'Enter the API URL for your OORT instance. This option defaults to pointing at the OORT production environment. Include the schema (https://)',
+        'Enter the API URL for your OORT instance. This option defaults to pointing at the OORT production environment. Include the scheme (https://)',
       default: 'https://dashboard-api.oort.io/api',
       type: 'text',
       userCanEdit: false,
