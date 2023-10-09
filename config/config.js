@@ -50,6 +50,26 @@ module.exports = {
       type: 'text',
       userCanEdit: false,
       adminOnly: true
+    },
+    {
+      key: 'tokenUrl',
+      name: 'Token URL',
+      description:
+        'Enter the Token URL for your OORT instance. This option defaults to pointing at the OORT production environment. Include the scheme (https://)',
+      default: 'https://login.oort.io/oauth/token',
+      type: 'text',
+      userCanEdit: false,
+      adminOnly: true
+    },
+    {
+      key: 'apiUrl',
+      name: 'API URL',
+      description:
+        'Enter the API URL for your OORT instance. This option defaults to pointing at the OORT production environment. Include the scheme (https://)',
+      default: 'https://dashboard-api.oort.io/api',
+      type: 'text',
+      userCanEdit: false,
+      adminOnly: true
     }
   ]
 };
